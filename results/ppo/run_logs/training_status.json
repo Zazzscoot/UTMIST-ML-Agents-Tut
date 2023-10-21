@@ -2,22 +2,22 @@
     "MoveToGoal": {
         "checkpoints": [
             {
-                "steps": 1024,
-                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-1024.onnx",
-                "reward": null,
-                "creation_time": 1697782320.2159145,
+                "steps": 418319,
+                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-418319.onnx",
+                "reward": 0.8347978910369068,
+                "creation_time": 1697872526.4192367,
                 "auxillary_file_paths": [
-                    "results\\ppo\\MoveToGoal\\MoveToGoal-1024.pt"
+                    "results\\ppo\\MoveToGoal\\MoveToGoal-418319.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 1024,
+            "steps": 418319,
             "file_path": "results\\ppo\\MoveToGoal.onnx",
-            "reward": null,
-            "creation_time": 1697782320.2159145,
+            "reward": 0.8347978910369068,
+            "creation_time": 1697872526.4192367,
             "auxillary_file_paths": [
-                "results\\ppo\\MoveToGoal\\MoveToGoal-1024.pt"
+                "results\\ppo\\MoveToGoal\\MoveToGoal-418319.pt"
             ]
         }
     },

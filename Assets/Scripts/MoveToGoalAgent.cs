@@ -13,19 +13,21 @@ public class MoveToGoalAgent : Agent
     [SerializeField] private Material loseMaterial;
     [SerializeField] private MeshRenderer floorMeshRenderer;
 
+    public void racist()
+    {
+        Debug.Log("Racist");
+    }
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = new Vector3(Random.Range(-3f, 1f),0,Random.Range(-2f,2f));
+        transform.localPosition = new Vector3(Random.Range(-2.2f, 1f),0,Random.Range(-2f, 2f));
         targetTransform.localPosition = new Vector3(Random.Range(2.4f, 5f), 0, Random.Range(-2f, 2f));
-
     }
     public override void OnActionReceived(ActionBuffers actions)
     {
-        float moveX = actions.ContinuousActions[0];
-        float moveZ = actions.ContinuousActions[1];
+        float moveZ = actions.ContinuousActions[0];
 
         float moveSpeed = 2f;
-        transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
+        transform.localPosition += new Vector3(0, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
     
     public override void CollectObservations(VectorSensor sensor)
@@ -34,13 +36,13 @@ public class MoveToGoalAgent : Agent
         sensor.AddObservation(targetTransform.localPosition);
 
     }
-
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
-        continuousActions[1] = Input.GetAxisRaw("Vertical");
+        // continuousActions[1] = Input.GetAxisRaw("Vertical");
     }
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<Goal>(out Goal goal))
@@ -56,4 +58,5 @@ public class MoveToGoalAgent : Agent
             EndEpisode();
         }
     }
+    */
 }
