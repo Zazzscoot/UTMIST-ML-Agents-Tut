@@ -20,7 +20,7 @@ public class MoveToGoalAgent : Agent
     public override void OnEpisodeBegin()
     {
         transform.localPosition = new Vector3(Random.Range(-2.2f, 1f),0,Random.Range(-2f, 2f));
-        targetTransform.localPosition = new Vector3(Random.Range(2.4f, 5f), 0, Random.Range(-2f, 2f));
+        targetTransform.localPosition = new Vector3(Random.Range(17f, 15f), Random.Range(8f, 9f), Random.Range(-2f, 2f));
     }
     public override void OnActionReceived(ActionBuffers actions)
     {
@@ -42,15 +42,9 @@ public class MoveToGoalAgent : Agent
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         // continuousActions[1] = Input.GetAxisRaw("Vertical");
     }
-    /*
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Goal>(out Goal goal))
-        {
-            SetReward(1f);
-            floorMeshRenderer.material = winMaterial;
-            EndEpisode();
-        }
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
             SetReward(-1f);
@@ -58,5 +52,5 @@ public class MoveToGoalAgent : Agent
             EndEpisode();
         }
     }
-    */
+    
 }

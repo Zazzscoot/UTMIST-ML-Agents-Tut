@@ -19,7 +19,6 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-      transform.localPosition += new Vector3(-0.08f, 0, 0);
     }
     private void OnTriggerEnter(Collider other)
     {
